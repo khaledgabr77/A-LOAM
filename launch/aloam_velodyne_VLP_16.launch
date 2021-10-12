@@ -7,8 +7,9 @@
 
     <!-- remove too closed points -->
     <param name="minimum_range" type="double" value="0.3"/>
-
-
+    <node pkg="tf2_ros" type="static_transform_publisher" name="imu_base_pub" args="0.5 0.0 0.3 0 0 0  base_footprint imu_link"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="lidar_base_pub" args="1.6 0 0.87 0 0.506145 0 base_footprint velodyne1"/>
+    <remap from = "/velodyne_points"  to = "points2" />
     <param name="mapping_line_resolution" type="double" value="0.2"/>
     <param name="mapping_plane_resolution" type="double" value="0.4"/>
 
